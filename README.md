@@ -1,4 +1,3 @@
-
 # 🌿 Proyek Klasifikasi Tanaman 🌱
 
 Selamat datang di proyek klasifikasi tanaman! 🌼 Proyek ini bertujuan membangun model deep learning untuk mengklasifikasikan gambar tanaman ke dalam kategori masing-masing menggunakan TensorFlow dan Keras. Dataset diambil dari Kaggle, dengan langkah-langkah pra-pemrosesan, augmentasi data, pelatihan, dan evaluasi model. 🚀
@@ -13,7 +12,6 @@ Selamat datang di proyek klasifikasi tanaman! 🌼 Proyek ini bertujuan membangu
 - [Pelatihan dan Evaluasi](#pelatihan-dan-evaluasi-🏋️)
 - [Hasil](#hasil-🏆)
 - [Kontribusi](#kontribusi-🤝)
-- [Lisensi](#lisensi-📜)
 - [Kontak](#kontak-📧)
 
 ## Ikhtisar Proyek 📖
@@ -21,9 +19,8 @@ Proyek ini mengembangkan model jaringan saraf konvolusional (CNN) untuk mengklas
 
 ## Dataset 📊
 Dataset berasal dari Kaggle: [Plants Classification Dataset](https://www.kaggle.com/datasets/marquis03/plants-classification). 🖼️ Dataset berisi gambar tanaman yang dikelompokkan berdasarkan kelas, dibagi menjadi:
-- **Data Test**
-- **Data Val**
-- **Data Train**
+- **Data Pelatihan**: Untuk melatih model. 📚
+- **Data Validasi**: Untuk mengevaluasi model. ✅
 
 Untuk mengunduh, Anda perlu akun Kaggle dan kunci API. Notebook sudah menyertakan kode untuk mengunduh dan mengekstrak dataset. 📥
 
@@ -50,13 +47,22 @@ Proyek ini dijalankan di **Google Colab dengan T4 GPU**, jadi tidak perlu lingku
      - Klik `Runtime` > `Change runtime type` > Pilih `T4 GPU`. ✅
 
 2. **Siapkan Kaggle API** 🔑
-   - Unduh `kaggle.json` dari akun Kaggle Anda.
-   - Unggah ke Colab menggunakan kode di notebook:
-     ```python
-     from google.colab import files
-     files.upload()
-     ```
-   - Atur kunci API:
+   - **Langkah 1: Buat Akun Kaggle**  
+     Jika belum punya akun Kaggle, daftar di [kaggle.com](https://www.kaggle.com). 📝
+   - **Langkah 2: Dapatkan Kunci API**  
+     - Masuk ke akun Kaggle Anda. 🔐
+     - Klik ikon profil di kanan atas, lalu pilih **Settings**. ⚙️  
+     - Di bagian **API**, klik tombol **Create New Token**. 🔑  
+     - File bernama `kaggle.json` akan otomatis terunduh ke folder **Downloads** di komputer/laptop Anda. 💾
+   - **Langkah 3: Unggah File `kaggle.json` ke Colab**  
+     - Di notebook Colab, jalankan kode berikut untuk mengunggah file:  
+       ```python
+       from google.colab import files
+       files.upload()
+       ```
+     - Setelah itu, klik **Choose Files**, lalu pilih file `kaggle.json` dari folder **Downloads** di komputer/laptop Anda. 📤
+   - **Langkah 4: Atur Kunci API**  
+     Jalankan perintah berikut di sel notebook untuk mengatur kunci API:  
      ```bash
      !mkdir -p ~/.kaggle
      !cp kaggle.json ~/.kaggle/
@@ -64,7 +70,7 @@ Proyek ini dijalankan di **Google Colab dengan T4 GPU**, jadi tidak perlu lingku
      ```
 
 3. **Unduh Dataset** 📦
-   Jalankan perintah berikut di notebook:
+   Jalankan perintah berikut di notebook untuk mengunduh dan mengekstrak dataset:
    ```bash
    !kaggle datasets download -d marquis03/plants-classification
    !unzip plants-classification.zip
@@ -91,7 +97,7 @@ Proyek ini dijalankan di **Google Colab dengan T4 GPU**, jadi tidak perlu lingku
 3. **Ubah Parameter (Opsional)** ⚙️
    - Sesuaikan hiperparameter seperti learning rate, batch size, atau epoch di notebook.
    - Coba arsitektur model atau teknik augmentasi berbeda untuk eksperimen. 🧪
-   - 
+     
 ## Arsitektur Model 🧠
 Proyek ini menggabungkan CNN kustom dan pembelajaran transfer:
 - **CNN Kustom**: Menggunakan lapisan `Conv2D`, `MaxPooling2D`, `Dense`, `Dropout`, dan `BatchNormalization`. 🛠️
@@ -112,7 +118,7 @@ Model dikompilasi dengan optimizer **Adam** dan fungsi kerugian **categorical cr
 ## Hasil 🏆
 Notebook menyediakan kode untuk mengevaluasi model pada data validasi. Hasil utama:
 - **Akurasi**: Persentase gambar yang diklasifikasikan benar. ✅
-- **Matriks**: Distribusi prediksi di seluruh kelas. 📉
+- **Matriks Kebingungan**: Distribusi prediksi di seluruh kelas. 📉
 - **Laporan Klasifikasi**: Presisi, recall, dan F1-score per kelas. 📋
 
 Jalankan sel evaluasi untuk melihat hasil. Model disimpan di direktori `models/` untuk penggunaan ulang. 💾
@@ -127,13 +133,9 @@ Kami menyambut kontribusi! 🎉 Untuk berkontribusi:
 
 Pastikan kode mengikuti gaya proyek dan sertakan dokumentasi. 📝
 
-## Lisensi 📜
-Proyek ini dilisensikan di bawah **Lisensi MIT**. Lihat file [LICENSE](LICENSE) untuk detail. 🗳️
-
 ## Kontak 📧
 - **Penulis**: Dearmawan
 - **Email**: dearmawantan@gmail.com 📨
-- **ID Dicoding**: dearmawan 🆔
 
 Ada pertanyaan atau saran? Hubungi via email atau buka isu di repositori. 😊
 
