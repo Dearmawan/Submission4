@@ -19,8 +19,9 @@ Proyek ini mengembangkan model jaringan saraf konvolusional (CNN) untuk mengklas
 
 ## Dataset 📊
 Dataset berasal dari Kaggle: [Plants Classification Dataset](https://www.kaggle.com/datasets/marquis03/plants-classification). 🖼️ Dataset berisi gambar tanaman yang dikelompokkan berdasarkan kelas, dibagi menjadi:
-- **Data Pelatihan**: Untuk melatih model. 📚
-- **Data Validasi**: Untuk mengevaluasi model. ✅
+- **Data Train**
+- **Data Val**
+- **Data Test**
 
 Untuk mengunduh, Anda perlu akun Kaggle dan kunci API. Notebook sudah menyertakan kode untuk mengunduh dan mengekstrak dataset. 📥
 
@@ -101,7 +102,7 @@ Proyek ini dijalankan di **Google Colab dengan T4 GPU**, jadi tidak perlu lingku
 ## Arsitektur Model 🧠
 Proyek ini menggabungkan CNN kustom dan pembelajaran transfer:
 - **CNN Kustom**: Menggunakan lapisan `Conv2D`, `MaxPooling2D`, `Dense`, `Dropout`, dan `BatchNormalization`. 🛠️
-- **Pembelajaran Transfer**: Memanfaatkan `MobileNet` dan `DenseNet121` dengan lapisan tambahan untuk klasifikasi. 🚀
+- **Transfer Learning**: Memanfaatkan `MobileNet` dan `DenseNet121` dengan lapisan tambahan untuk klasifikasi. 🚀
 - **Augmentasi Data**: Rotasi, pembalikan, zoom, dan penyesuaian gamma untuk dataset lebih beragam. 🎨
 
 Model dikompilasi dengan optimizer **Adam** dan fungsi kerugian **categorical cross-entropy** untuk klasifikasi multi-kelas. 📈
@@ -118,8 +119,8 @@ Model dikompilasi dengan optimizer **Adam** dan fungsi kerugian **categorical cr
 ## Hasil 🏆
 Notebook menyediakan kode untuk mengevaluasi model pada data validasi. Hasil utama:
 - **Akurasi**: Persentase gambar yang diklasifikasikan benar. ✅
-- **Matriks Kebingungan**: Distribusi prediksi di seluruh kelas. 📉
-- **Laporan Klasifikasi**: Presisi, recall, dan F1-score per kelas. 📋
+- **Matriks**: Distribusi prediksi di seluruh kelas. 📉
+- **Laporan Klasifikasi**: Presisi, recall,dan F1-score per kelas. 📋
 
 Jalankan sel evaluasi untuk melihat hasil. Model disimpan di direktori `models/` untuk penggunaan ulang. 💾
 
