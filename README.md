@@ -38,6 +38,13 @@ Proyek ini menggunakan Python dan pustaka berikut, yang sudah tersedia atau dapa
 - Scikit-image 🖌️
 - TQDM ⏳
 - Pillow 🛏️
+  
+## Instal Dependensi
+Jalankan perintah berikut di sel notebook untuk menginstal dependensi:
+```bash
+!pip install -r requirements.txt
+```
+Catatan: Jika Colab sudah memiliki beberapa pustaka (seperti TensorFlow atau NumPy), instalasi akan melewati pustaka tersebut. Pastikan semua pustaka terinstal dengan baik! ✅
 
 ## Instalasi ⚙️
 Proyek ini dijalankan di **Google Colab dengan T4 GPU**, jadi tidak perlu lingkungan lokal. Ikuti langkah berikut:
